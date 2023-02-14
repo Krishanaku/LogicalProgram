@@ -6,24 +6,32 @@ namespace LogicalProgram
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Press Enter the Stop Watch Time : ");
-            int second = Convert.ToInt32(Console.ReadLine());
+            int first = 0;
+            int temp;
+            Console.WriteLine("how many coupon number you required ?");
+            int Number = Convert.ToInt32(Console.ReadLine());
 
-            Stopwatch stopwatch = new Stopwatch();
-            Console.WriteLine("Stop Watch is Started ");
-            stopwatch.Start();
+            Console.WriteLine("genreted coupon number");
 
-            // ... This takes 10 seconds to finish.
-            for (int i = 0; i < second; i++)
+            for (int i = 0; i < Number; i++)
             {
-                System.Threading.Thread.Sleep(100);
+                Random number = new Random();
+                int coupon = number.Next(10000, 100000);
+
+                Console.WriteLine("Coupon : " + coupon);
+                Console.ReadLine();
+                temp = coupon;
+                first = temp;
+
+                if (first != temp)
+                {
+                    Console.WriteLine("Coupon Are same");
+                }
+                else
+                {
+                    Console.WriteLine("Coupon are Different");
+                }
             }
-
-            // Stop.
-            stopwatch.Stop();
-
-            // Write hours, minutes and seconds.
-            Console.WriteLine("Time elapsed: {0:hh\\:mm\\:ss}", stopwatch.Elapsed);
         }
     }
 }
