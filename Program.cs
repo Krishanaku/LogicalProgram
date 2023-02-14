@@ -6,27 +6,28 @@ namespace LogicalProgram
     {
         public static void Main(string[] args)
         {
-            int a = 0, i, num;
-            Console.WriteLine("Enter your Number to Check Prime number or not");
-            num = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(num);
-            for (i = 1; i <= num; i++)
-            {
+            int n, i, sum;
+            int mn, mx;
+            Console.WriteLine("Input the Starting range or number");
+            mn = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input the Starting range or number");
+            mx = Convert.ToInt32(Console.ReadLine());
 
-                if (num % i == 0)
+            Console.WriteLine("The Perfect Number within the given range : ");
+            for (n = mn; n <= mx; n++)
+            {
+                i = 1;
+                sum = 0;
+                while (i < n)
                 {
-                    a++;
-
+                    if (n % i == 0)
+                        sum = sum + i;
+                    i++;
                 }
-            }
-            if (a == 2)
-            {
-                Console.WriteLine("Prime number");
-
-            }
-            else
-            {
-                Console.WriteLine("Not Prime number");
+                if (sum == n)
+                {
+                    Console.WriteLine("{0}", n);
+                }
             }
 
         }
