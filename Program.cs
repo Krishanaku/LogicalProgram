@@ -6,19 +6,28 @@ namespace LogicalProgram
     {
         public static void Main(string[] args)
         {
-            int n, reverse = 0, num, rem;
-            Console.WriteLine("Enter a Number");
-            n = Convert.ToInt32(Console.ReadLine());
-
-            while (n != 0)
+            int a = 0, i, num;
+            Console.WriteLine("Enter your Number to Check Prime number or not");
+            num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(num);
+            for (i = 1; i <= num; i++)
             {
-                rem = n % 10;
-                reverse = reverse * 10 + rem;
-                n = n / 10;
+
+                if (num % i == 0)
+                {
+                    a++;
+
+                }
+            }
+            if (a == 2)
+            {
+                Console.WriteLine("Prime number");
 
             }
-            Console.WriteLine("Reversed Number " + reverse);
-
+            else
+            {
+                Console.WriteLine("Not Prime number");
+            }
 
         }
     }
